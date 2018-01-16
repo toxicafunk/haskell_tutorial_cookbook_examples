@@ -1,4 +1,4 @@
-module GameLoop2 where
+module Main where
 
 import System.Random
 
@@ -7,7 +7,7 @@ data GameState = GameState { numberToGuess::Integer, numTries::Integer}
 
 gameLoop :: GameState -> IO GameState
 gameLoop gs = do
-  print $ gs
+  print $ numberToGuess gs
   putStrLn "Enter a number:"
   s <- getLine
   let num = read s :: Integer
