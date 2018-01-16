@@ -10,7 +10,7 @@ testLetComprehension =
 
 testWhereBlocks a =
   z * q
-    where
+  where
       z = a + 2
       q = 2
           
@@ -26,5 +26,3 @@ main = do
   print testLetComprehension
   print $ testWhereBlocks 11
   print $ functionWithWhere 1
-  
-  

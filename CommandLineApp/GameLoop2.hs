@@ -6,15 +6,15 @@ data GameState = GameState { numberToGuess::Integer, numTries::Integer}
                    deriving (Show)
 
 gameLoop :: GameState -> IO GameState
-gameLoop gs = do      
-  print $ numberToGuess gs
+gameLoop gs = do
+  print $ gs
   putStrLn "Enter a number:"
   s <- getLine
   let num = read s :: Integer
   if num == numberToGuess gs then
     return gs
   else gameLoop $ GameState (numberToGuess gs) ((numTries gs) + 1)
-         
+
 main = do
   pTime <- randomRIO(1,4)
   let gameState = GameState pTime 1

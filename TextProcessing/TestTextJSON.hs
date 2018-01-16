@@ -3,7 +3,7 @@
 module Main where
 
 import Text.JSON.Generic
-          
+
 data Person = Person {name::String, email::String } deriving (Show, Data, Typeable)
 
 main = do
@@ -14,5 +14,3 @@ main = do
   print d
   print $ name d
   print $ email d
-
-  
